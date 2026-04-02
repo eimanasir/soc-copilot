@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-04-02T10:00:00Z",
+    "host": "win10-endpoint-01",
+    "source": "Sysmon",
+    "event_type": "authentication",
+    "message": "Multiple failed login attempts detected for local administrator account from 192.168.1.50",
+    "raw_log": {
+      "event_id": 4625,
+      "username": "Administrator",
+      "source_ip": "192.168.1.50",
+      "failed_attempts": 12
+    }
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-04-02T10:05:00Z",
+    "host": "win10-endpoint-02",
+    "source": "Sysmon",
+    "event_type": "process_creation",
+    "message": "Suspicious PowerShell execution with encoded command",
+    "raw_log": {
+      "event_id": 1,
+      "process_name": "powershell.exe",
+      "command_line": "powershell.exe -enc SQBuAHYAbwBrAGUALQBNAGkAbQBpAGsAYQB0AHoA",
+      "parent_process": "cmd.exe"
+    }
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-04-02T10:08:00Z",
+    "host": "server-01",
+    "source": "Sysmon",
+    "event_type": "network_connection",
+    "message": "Outbound connection to unusual external IP after script execution",
+    "raw_log": {
+      "event_id": 3,
+      "destination_ip": "45.133.10.99",
+      "destination_port": 4444,
+      "process_name": "powershell.exe"
+    }
+  },
+  {
+    "id": 4,
+    "timestamp": "2026-04-02T10:15:00Z",
+    "host": "dc-01",
+    "source": "Security",
+    "event_type": "credential_access",
+    "message": "Potential credential dumping behavior detected",
+    "raw_log": {
+      "event_id": 10,
+      "process_name": "procdump.exe",
+      "target_process": "lsass.exe",
+      "user": "lab\\analyst"
+    }
+  }
+]
