@@ -32,8 +32,5 @@ Commands for local run:
 python app/main.py
 ```
 
-Commands for docker run:
-```bash
-docker build -t soc-copilot .
 docker run --rm --env-file .env -v "%cd%\output:/app/output" soc-copilot
 ```
